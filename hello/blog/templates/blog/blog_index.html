@@ -1,0 +1,27 @@
+{% extends 'word/base.html'%}
+
+
+{% block title%}Мой Блог{% endblock%}
+{% block content%}
+    <div class="features">
+
+        <h1>Мой Блог</h1>
+        {%for el in index %}
+            <div class="alert alert-warning">
+                <h3>{{el.title}}</h3>
+                <p> {{el.body}}</p>
+
+               <p>{{ el.created_on.date }} |&nbsp;
+                Категории:&nbsp;</p>
+                {%for category in el.categories.all%}
+                 <li href="{% url 'blog_category' category.name %}">
+                {{ category.name }}
+                 </li> &nbsp;
+                {%endfor%}
+
+                <a href="{%url 'blog_detail' el.id%}" class="btn btn-info">Подробнее</a>
+            </div>
+
+        {%endfor%}
+    </div>
+{%endblock%}

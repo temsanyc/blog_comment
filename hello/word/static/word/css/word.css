@@ -1,0 +1,87 @@
+/* Add a black background color to the top navigation */
+div {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+div a {
+    list-style: none;
+    transition: all .6s ease;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the color of links on hover */
+div a:hover , li:hover {
+    text-decoration: none;
+    background-color: #ddd;
+    color: black;
+}
+div ul a:hover, li:hover {
+    transform: scale(1.1);
+}
+/* Add a color to the active/current link */
+div a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+main .features{
+    float: center;
+    margin-left:100px;
+    margin-top:50px;
+    text-align: center;
+    width:100%;
+    background-color: #FFFFFF;
+
+}
+main .features h1 { font-size: 60px;}
+main .features p {max-width: 400px;margin:20px auto;}
+
+.alert-warning{
+    float:center;
+    clear:both;
+    width:550px;
+    margin:20px 34%;
+    text-align:center;
+    background-color:#E6E6FA;
+}
+.alert-warning img{
+
+    float:center;
+    width:450px;
+    hight: 450px;
+}
+.alert-warning a{
+    margin:10px 40%;
+
+}
+
+.detail {
+     float:center;
+    clear:both;
+    width:550px;
+
+    margin:20px 34%;
+    text-align:center;
+    background-color:#E6E6FA;
+}
+.detail img{
+
+    float:center;
+    width:450px;
+    hight: 450px;
+    margin:20px ;
+    }
+form {
+    margin-left:35%;
+    width:500px;
+    margin-top:50px;
+
+}
+form div{background-color:#FFFFFF;}
+form button{margin-top:10px;}

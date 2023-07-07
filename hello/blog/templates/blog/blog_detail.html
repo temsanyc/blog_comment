@@ -1,0 +1,50 @@
+{% extends 'word/base.html'%}
+
+
+{% block title%}{{post.title}}{% endblock%}
+{% block content%}
+
+    <div class="detail">
+
+            <h1>{{post.title}}</h1>
+            <p>{{post.body}}</p>
+            {%for el in post.categories.all%}
+                  <h6>Категория:{{el.name}}</h6>
+            {%endfor%}
+
+    </div>
+
+    <form method="post">
+        {%csrf_token%}
+
+         {{form.author}}<br>
+         {{form.body}}<br>
+
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Категории:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+        <br>
+
+        <button type="submit" class="btn btn-primary">Оставить комментарий</button>
+
+
+    </form>
+    <div class="detail"><br>
+            <h3>Комментарии:</h3>
+             {% for comment in comments %}
+            <p>
+             {{comment.created_on.date }}&nbsp;<br>
+            <b>{{ comment.author }}</b> :
+             </p>
+            <p>{{ comment.body }}</p>
+            <hr>
+            {% endfor %}
+        </div>
+  </div>
+{%endblock%}
